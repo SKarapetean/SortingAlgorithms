@@ -1,5 +1,5 @@
 Java Sorting Algorithms:
-This is a Java-based program that implements four different sorting algorithms for both primitive (int) and generic types: bubble sort, selection sort, insertion sort, and quick sort.
+This is a Java-based program that implements four different sorting algorithms for both primitive (int) and generic types: bubble sort, selection sort, insertion sort, quick sort and merge sort.
 
 Sorting Algorithms:
 Bubble Sort:
@@ -13,6 +13,9 @@ This is a sorting algorithm that builds the final sorted list one item at a time
 
 Quick Sort:
 This is a divide-and-conquer sorting algorithm that picks an element as a pivot and partitions the array around the pivot. It has a time complexity of O(n log n).
+
+Merge Sort:
+This is a divide-and-conquer sorting algorithm that divides the input array into two halves, recursively sorts them, and then merges the two sorted halves. It has a time complexity of O(n log n).
 
 Customizing:
 If you want to customize the Java Sorting Algorithms program, you can modify the existing classes or create new subclasses to implement additional sorting algorithms. You can also modify the SortTester class to test the new algorithms with different input data.
