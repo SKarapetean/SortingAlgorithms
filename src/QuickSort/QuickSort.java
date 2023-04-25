@@ -2,7 +2,7 @@ package QuickSort;
 import java.util.Arrays;
 public class QuickSort {
 
-    public static int[] sort(int[] array) {
+    public static int[] sortVersion1(int[] array) {
         return quickSortVersion1(array, array.length);
     }
 

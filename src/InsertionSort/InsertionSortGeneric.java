@@ -1,8 +1,8 @@
 package InsertionSort;
 
-public class InsertionSortGeneric <T extends Comparable<T>>{
+public class InsertionSortGeneric {
 
-    public void sort(T[] array) {
+    public static <T extends Comparable<T>> void sort(T[] array) {
         T key;
         int j;
         for (int i = 0; i < array.length; ++i) {
