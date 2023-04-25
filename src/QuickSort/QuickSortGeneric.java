@@ -1,19 +1,19 @@
 package QuickSort;
 
-public class QuickSortGeneric <T extends Comparable<T>>{
+public class QuickSortGeneric {
 
-    public void sort(T[] array) {
+    public static <T extends Comparable<T>> void sort(T[] array) {
         quickSort(array, 0, array.length - 1);
     }
 
-    private void quickSort(T[] array, int left, int right) {
+    private static <T extends Comparable<T>> void quickSort(T[] array, int left, int right) {
         if (left < right) {
             int pivotIndex = partition(array, left, right);
             quickSort(array, left, pivotIndex - 1);
             quickSort(array, pivotIndex + 1, right);
         }
     }
-    private int partition(T[] array, int left, int right) {
+    private static <T extends Comparable<T>> int partition(T[] array, int left, int right) {
         T pivot = array[right];
         int i = left - 1;
 
@@ -27,7 +27,7 @@ public class QuickSortGeneric <T extends Comparable<T>>{
         swap(array,i + 1, right);
         return i + 1;
     }
-    private void swap(T[] array, int index1, int index2) {
+    private static <T extends Comparable<T>> void swap(T[] array, int index1, int index2) {
         T tmp = array[index1];
         array[index1] = array[index2];
         array[index2] = tmp;
