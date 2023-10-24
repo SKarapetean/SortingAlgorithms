@@ -1,35 +1,44 @@
 package HeapSort;
 
 public class HeapSort {
-
-    public static void heapify(int[] arr, int size, int n) {
-        int r = size-1;
-        while (n >= 0) {
-            int i = r - n*2;
-            while (i >= 0) {
-                if (arr[n] < arr[r]) {
-                    int tmp = arr[n];
-                    arr[n] = arr[r];
-                    arr[r] = tmp;
-                }
-                --i;
-                --r;
-            }
-            --n;
+    public static void sort(int[] arr) {
+        build(arr);
+        for (int i = arr.length - 1; i >= 1; --i) {
+            swap(arr, 0, i);
+            heapify(0, i, arr);
         }
     }
 
-    public static void sort(int[] arr) {
-        int n = arr.length/2 - 1;
-        int size = arr.length;
-        while (size > 0) {
-            heapify(arr,size, n);
-            int tmp = arr[0];
-            arr[0] = arr[size - 1];
-            arr[size - 1] = tmp;
-            --size;
-            n = size/2 - 1;
+    private static void build(int[] arr) {
+        for (int i = arr.length/2 - 1; i >= 0; --i) {
+            heapify(i, arr.length, arr);
         }
+    }
+
+    private static void heapify(int i, int size, int[] arr) {
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int largest = i;
+
+        if (left < size && arr[left] > arr[i]) {
+            largest = left;
+        }
+
+        if (right < size && arr[right] > arr[largest]) {
+            largest = right;
+        }
+
+        if (largest != i) {
+            swap(arr, i, largest);
+            heapify(largest, size, arr);
+        }
+    }
+
+
+    private static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
 }
